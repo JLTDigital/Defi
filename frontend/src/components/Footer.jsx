@@ -9,15 +9,19 @@ const Footer = () => {
       <Container>
         <Row className='py-2 text-center'>
           <Col md={6} className='p-2 mt-2'>
-            <img className='footer-img' src={BlockchainDeFiImg} alt="Logo"/>
-            <small className='ml-1 footer-title'>Blockchain & DeFi Resources &copy; 2021</small>
+            <img className='footer-img' src={BlockchainDeFiImg} alt='Logo' />
+            <small className='ml-1 footer-title'>
+              Blockchain & DeFi Resources &copy; 2024
+            </small>
           </Col>
           <Col md={6} className='p-2 mt-2 text-center'>
             <small>Built by JLTDigital - Fullstack Developer</small>
-            <br/>
-            <small>Contact me: <a href="http://jlt.digital" target="_blank" rel="noreferrer">
-            <BiEnvelopeOpen color='#000' />
-            </a>
+            <br />
+            <small>
+              Contact me:{' '}
+              <a href='http://jlt.digital' target='_blank' rel='noreferrer'>
+                <BiEnvelopeOpen color='#000' />
+              </a>
             </small>
           </Col>
         </Row>
