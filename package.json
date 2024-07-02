@@ -1,0 +1,37 @@
+{
+  "name": "blockchain_and_defi_resources",
+  "version": "1.0.0",
+  "description": "Blockchain & DeFi Resources",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server npm install --prefix frontend && npm run build --prefix frontend",
+    "server": "nodemon backend/server",
+    "client": "npm run dev --prefix frontend",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [
+    "Blockchain",
+    "DeFi",
+    "Decentralised",
+    "Finance",
+    "Ethereum"
+  ],
+  "author": "JLTDigital",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "colors": "^1.4.0",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^8.4.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}
