@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import Hero from '../components/Hero'
 import Meta from '../components/Meta'
-// import axios from 'axios'
 import Loader from '../components/Loader'
-import Message from '../components/Message'
 import { Row, Col, Image } from 'react-bootstrap'
 
 const DappsView = () => {
   const [dapps, setDapps] = useState([])
   const [loading, setLoading] = useState(true)
 
+  let BASE_URL
+
+  if (import.meta.env.VITE_ENV === 'production') {
+    BASE_URL = import.meta.env.VITE_PROD_BASE_URL
+  } else {
+    BASE_URL = import.meta.env.VITE_DEV_BASE_URL
+  }
+
   useEffect(() => {
     const getDapps = async () => {
-      const apiUrl = '/api/defi/dapps'
+      const apiUrl = `${BASE_URL}/api/defi/dapps`
       try {
         const res = await fetch(apiUrl)
         const data = await res.json()
@@ -64,7 +70,6 @@ const DappsView = () => {
           ))}
         </Row>
       )}
-      {/* {error ? <Message>{error}</Message> : ''} */}
     </div>
   )
 }

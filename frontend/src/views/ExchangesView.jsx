@@ -10,6 +10,14 @@ const ExchangesView = () => {
   const [exchanges, setExchanges] = useState([])
   const [error, setError] = useState('')
 
+  let BASE_URL
+
+  if (import.meta.env.VITE_ENV === 'production') {
+    BASE_URL = import.meta.env.VITE_PROD_BASE_URL
+  } else {
+    BASE_URL = import.meta.env.VITE_DEV_BASE_URL
+  }
+
   useEffect(() => {
     onRender()
     getExchanges()
@@ -17,7 +25,7 @@ const ExchangesView = () => {
 
   const getExchanges = async () => {
     await axios
-      .get('/api/exchanges')
+      .get(`${BASE_URL}/api/exchanges`)
       .then((response) => response.data)
       .then((data) => setExchanges(data))
       .catch((error) => setError(error))
