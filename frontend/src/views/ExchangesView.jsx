@@ -25,7 +25,7 @@ const ExchangesView = () => {
 
   const getExchanges = async () => {
     await axios
-      .get(`${BASE_URL}api/exchanges`)
+      .get(`${BASE_URL}/api/exchanges`)
       .then((response) => response.data)
       .then((data) => setExchanges(data))
       .catch((error) => setError(error))

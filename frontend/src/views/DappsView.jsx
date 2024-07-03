@@ -18,7 +18,7 @@ const DappsView = () => {
 
   useEffect(() => {
     const getDapps = async () => {
-      const apiUrl = `${BASE_URL}api/defi/dapps`
+      const apiUrl = `${BASE_URL}/api/defi/dapps`
       try {
         const res = await fetch(apiUrl)
         const data = await res.json()

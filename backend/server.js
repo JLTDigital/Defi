@@ -1,5 +1,5 @@
 import express from 'express'
-import path from 'path'
+// import path from 'path'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import morgan from 'morgan'
@@ -34,7 +34,27 @@ app.use('/api', linksRoutes)
 app.use('/api', literatureRoutes)
 app.use('/api', walletRoutes)
 
-const __dirname = path.resolve()
+// const __dirname = path.resolve()
+
+const prodOrigin = [process.env.ORIGIN_1]
+const devOrigin = ['http://localhost:5173']
+const allowedOrigins =
+  process.env.NODE_ENV === 'production' ? prodOrigin : devOrigin
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true)
+      } else {
+        callback(new Error(`${origin} not allowed by cors`))
+      }
+    },
+    optionsSuccessStatus: 200,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  })
+)
+app.use(cors())
 
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(path.join(__dirname, '/frontend/dist')))

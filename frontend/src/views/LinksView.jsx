@@ -24,7 +24,7 @@ const LinksView = () => {
 
   const getLinks = async () => {
     await axios
-      .get(`${BASE_URL}api/links`)
+      .get(`${BASE_URL}/api/links`)
       .then((response) => response.data)
       .then((data) => setLinks(data))
       .catch((error) => setError(error))

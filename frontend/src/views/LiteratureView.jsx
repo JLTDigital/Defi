@@ -24,7 +24,7 @@ const LiteratureView = () => {
 
   const getLiterature = async () => {
     await axios
-      .get(`${BASE_URL}api/literature`)
+      .get(`${BASE_URL}/api/literature`)
       .then((response) => response.data)
       .then((data) => setLiteratures(data))
       .catch((error) => setError(error))
