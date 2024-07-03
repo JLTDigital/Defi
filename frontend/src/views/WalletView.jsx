@@ -25,7 +25,7 @@ const WalletView = () => {
 
   const getWallets = async () => {
     await axios
-      .get(`${BASE_URL}/api/wallets`)
+      .get(`${BASE_URL}api/wallets`)
       .then((response) => response.data)
       .then((data) => setWallets(data))
       .catch((error) => setError(error))

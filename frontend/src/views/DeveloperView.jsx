@@ -24,7 +24,7 @@ const DeveloperView = () => {
 
   const getDevelopers = async () => {
     await axios
-      .get(`${BASE_URL}/api/developer`)
+      .get(`${BASE_URL}api/developer`)
       .then((response) => response.data)
       .then((data) => setDevelopers(data))
       .catch((error) => setError(error))

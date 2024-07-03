@@ -25,7 +25,7 @@ const NftView = () => {
 
   const getNfts = async () => {
     await axios
-      .get(`${BASE_URL}/api/defi/nft`)
+      .get(`${BASE_URL}api/defi/nft`)
       .then((response) => response.data)
       .then((data) => setNfts(data))
       .catch((error) => setError(error))

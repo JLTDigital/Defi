@@ -24,7 +24,7 @@ const GamesView = () => {
 
   const getGames = async () => {
     await axios
-      .get(`${BASE_URL}/api/defi/games`)
+      .get(`${BASE_URL}api/defi/games`)
       .then((response) => response.data)
       .then((data) => setGames(data))
       .catch((error) => setError(error))
