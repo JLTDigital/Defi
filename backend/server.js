@@ -1,5 +1,4 @@
 import express from 'express'
-// import path from 'path'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import morgan from 'morgan'
@@ -34,8 +33,6 @@ app.use('/api', linksRoutes)
 app.use('/api', literatureRoutes)
 app.use('/api', walletRoutes)
 
-// const __dirname = path.resolve()
-
 const prodOrigin = [process.env.ORIGIN_1]
 const devOrigin = ['http://localhost:5173']
 const allowedOrigins =
@@ -56,17 +53,10 @@ app.use(
 )
 app.use(cors())
 
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, '/frontend/dist')))
-
-//   app.get('/*', (req, res) =>
-//     res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
-//   )
-// } else {
 app.get('/api', (req, res) => {
   res.send('API is active...')
 })
-// }
+
 app.use(notFound)
 
 app.use(errorHandler)
