@@ -2,7 +2,7 @@
 
 Curated resources for beginners in the Crypto and DeFi space. Everything from Blockchain, Ethereum to Wallets, NFTs and Games.
 
-http://blockchaindefiresources.com
+https://defi-mocha.vercel.app/
 
 # More Info
 
